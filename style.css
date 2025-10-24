@@ -36,4 +36,14 @@ a {
 ul {
   text-align: left;
 }
+button {
+  text-align: left;
+  background-color: #8d9be0;
+  color: #000;
+  font-weight: bold;
+  border-radius: 2px;
+  border: 7px #8d9be0;
+  padding: 5px 20px;
+  font-size: 17px;
+}
 
