@@ -10,7 +10,7 @@ body {
 div {
   text-align: center;
   border: 0;
-  font-size: 120%;
+  font-size: 100%;
   vertical-align: baseline;
   margin: 0;
   padding: 0;
@@ -25,6 +25,11 @@ html {
 h1 {
   margin-top: 50px;
   margin-bottom: 50px;
+}
+
+h2 {
+  color: #b1b9e2;
+  text-align: left;
 }
 
 h3 {
@@ -47,11 +52,15 @@ img{
     width:auto;
 }
 
+img.small {
+  max-width: 200px;
+}
+
 
 button {
   text-align: left;
   background-color: #8d9be0;
-  color: #000;
+  color: #292929;
   font-weight: bold;
   border-radius: 2px;
   border: none;
@@ -62,12 +71,29 @@ button {
   box-sizing: border-box;
 }
 
+.button1:hover {
+  background-color: #b1b9e2;
+}
+
 .button-container {
   display: flex;
   justify-content: center; /* center buttons horizontally */
   gap: 20px; /* space between buttons */
   flex-wrap: wrap; /* allow wrapping on small screens */
   margin-bottom: 30px;
+}
+
+.ascii-container {
+  display: inline-block;
+  margin: 0;
+  padding: 20px;
+  background-color: #000;
+  color: #fff;
+  font-family: monospace;
+  font-size: 12px;
+  line-height: 1.2;
+  white-space: pre;
+  overflow: auto;
 }
 
 /* Media query for smaller screens */
