@@ -4,15 +4,32 @@
   <meta charset="UTF-8" />
   <title>Welcome!</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="" />
   <link rel="stylesheet" type="text/css" href="style.css" />
   <link rel="icon" href="favicon.png">
 </head>
 <body>
   <button onclick="location.href='technology/index.html'" class="button1">Technology</button>
   <button onclick="location.href='faq/index.html'" class="button1">Faq</button>
-<div>
-  <p> <pre>
+  
+  <div>
+    <button class="button2" onclick="change()" id="asciiComputer"></button>
+  </div>
+
+  <h3>About me</h3>
+  <p>My name is Ensar Junuzovic, I am a second year computer-science student at LTH in Lund, Sweden. My interests include computers, programming, music, art, photography and reading. </p>
+
+  <h3>Current projects</h3>
+  <ul>
+    <li><a href="https://github.com/zbingl/Game2D">Game2D</a>, a 2D game developed in Java (new name coming soon)</li>  
+  </ul>
+
+  <h3>Links</h3>
+  <p>Visit my <a href="https://github.com/zbingl">Github page</a> to see all my projects.</p>
+
+  <script>
+    
+    let openLid = `
+<pre>
    +--------------+
    |.------------.|
    ||            ||
@@ -22,23 +39,37 @@
    |+------------+|
    +-..--------..-+
    .--------------.
-  / /============\ \
- / /==============\ \
-/____________________\
-\____________________/
-  </pre></p>
+  / /============\\ \\
+ / /==============\\ \\
+/____________________\\
+\\____________________/
+</pre>`;
 
-  <h3>About me</h3>
-    <p>My name is Ensar Junuzovic, I am a second  year computer-science student at LTH in Lund, Sweden. My interests include computers, programming, music, art, photography and reading. </p>
-  <h3>Current projects</h3>
-    <ul>
-      <li><a href="https://github.com/zbingl/Game2D">Game2D</a>, a 2D game developed in java (new name coming soon)</li>  
-    </ul>
+    let closedLid = `
+<pre>
 
-     
-  <h3>Links</h3>
-    <p>Visit my  <a href="https://github.com/zbingl">Github page</a> to see all my projects.</p>
- 	
-<div>
+
+
+
+
+
+
+  
+   .--------------.
+  /                \\
+ /__________________\\
+/____________________\\
+\\____________________/
+</pre>`;
+
+    document.getElementById("asciiComputer").innerHTML = openLid;
+    let open = true;
+
+    function change() {
+      const elem = document.getElementById("asciiComputer");
+      elem.innerHTML = open ? closedLid : openLid;
+      open = !open;
+    }
+  </script>
 </body>
 </html>

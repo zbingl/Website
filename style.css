@@ -75,6 +75,14 @@ button {
   background-color: #b1b9e2;
 }
 
+.button2 {
+  background-color: #333;
+  color: white;
+  max-width: 700px;
+
+}
+
+
 .button-container {
   display: flex;
   justify-content: center; /* center buttons horizontally */
