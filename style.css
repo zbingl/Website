@@ -47,7 +47,6 @@ a {
 }
 
 img{
-    max-width:650px;
     height:auto;
     width:auto;
 }
@@ -56,19 +55,29 @@ img.small {
   max-width: 200px;
 }
 
+img.large {
+  max-width: 600px;
+}
+
 
 button {
-  text-align: left;
-  background-color: #8d9be0;
-  color: #292929;
   font-weight: bold;
   border-radius: 2px;
   border: none;
   padding: 10px 20px;
   font-size: 17px;
-  flex: 1 1 150px; /* grow/shrink, min width 150px */
-  max-width: 200px; /* limit button size on large screens */
+  flex: 1 1 150px; 
   box-sizing: border-box;
+}
+
+.button1 {
+  text-align: left;
+  background-color: #8d9be0;
+  color: #292929;
+  font-weight: bold;
+  border-radius: 2px;
+  max-width: 200px;
+
 }
 
 .button1:hover {
@@ -76,18 +85,18 @@ button {
 }
 
 .button2 {
+  text-align: left;
   background-color: #333;
   color: white;
   max-width: 700px;
-
 }
 
 
 .button-container {
   display: flex;
-  justify-content: center; /* center buttons horizontally */
-  gap: 20px; /* space between buttons */
-  flex-wrap: wrap; /* allow wrapping on small screens */
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
   margin-bottom: 30px;
 }
 
@@ -134,8 +143,17 @@ button {
   }
 
   img{
-    max-width:400px;
     height:auto;
     width:auto;
-}
+  }
+
+  img.small {
+  max-width: 200px;
+  }
+
+  img.large {
+    max-width: 400px;
+  }
+
+
 }
