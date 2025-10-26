@@ -100,18 +100,7 @@ button {
   margin-bottom: 30px;
 }
 
-.ascii-container {
-  display: inline-block;
-  margin: 0;
-  padding: 20px;
-  background-color: #000;
-  color: #fff;
-  font-family: monospace;
-  font-size: 12px;
-  line-height: 1.2;
-  white-space: pre;
-  overflow: auto;
-}
+
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
@@ -142,13 +131,21 @@ button {
     margin-bottom: 5px;
   }
 
+  .button1 {
+    max-width: none;
+  }
+
+  .button2 {
+    max-width: none;
+  }
+
   img{
     height:auto;
     width:auto;
   }
 
   img.small {
-  max-width: 200px;
+    max-width: 200px;
   }
 
   img.large {
