@@ -2,20 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Faq</title>
+  <title>Guestbook</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="" />
   <link rel="stylesheet" type="text/css" href="../style.css" />
   <link rel="icon" href="favicon.png">
+    <script src="script.js" defer></script>
 </head>
 <body>
   <button onclick="location.href='../index.html'" class="button1">Go back</button>
-<div>
-  <h1>Faq</h1> 
+  <h1>Leave a message</h1> 
 
-  <h3>WIP</h3>
-   
+  <div>
+    <textarea name="Text1" cols="40" rows="3" minlength="0"
+      maxlength="120" id="fileInput">
+    </textarea>
+  </div>
 
-<div>
+  <div>
+    <button onclick="saveInput()" class="button1">Save</button>
+  </div>
+
+  <h2>Guestbook (WIP)</h2>
+  <p id="guestBook"></p>
 </body>
 </html>
