@@ -27,50 +27,5 @@
   <h3>Links</h3>
   <p>Visit my <a href="https://github.com/zbingl">Github page</a> to see all my projects.</p>
 
-  <script>
-    
-    let openLid = `
-<pre>
-   +--------------+
-   |.------------.|
-   ||            ||
-   ||  <b>Welcome!</b>  ||
-   || (click me) ||
-   ||            ||
-   |+------------+|
-   +-..--------..-+
-   .--------------.
-  / /============\\ \\
- / /==============\\ \\
-/____________________\\
-\\____________________/
-</pre>`;
-
-    let closedLid = `
-<pre>
-
-
-
-
-
-
-
-  
-   .--------------.
-  /                \\
- /__________________\\
-/____________________\\
-\\____________________/
-</pre>`;
-
-    document.getElementById("asciiComputer").innerHTML = openLid;
-    let open = true;
-
-    function change() {
-      const elem = document.getElementById("asciiComputer");
-      elem.innerHTML = open ? closedLid : openLid;
-      open = !open;
-    }
-  </script>
 </body>
 </html>
