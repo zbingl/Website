@@ -1,0 +1,60 @@
+[project]
+name = "Website"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "lefthook>=2.0.15",
+    "poethepoet>=0.40.0",
+]
+
+[tool.poe]
+executor.type = "uv"
+env = { UV_IGNORE_PATH_MISMATCH = "1" }
+
+[tool.poe.tasks.install]
+help = "Install tools and dependencies for both backend and frontend"
+sequence = [
+    { cmd = "uv run lefthook install" },
+    { cmd = "uv sync", cwd = "backend" },
+    { cmd = "deno install", cwd = "frontend" }
+]
+ignore_fail = "return_non_zero"
+
+[tool.poe.tasks.serve]
+help = "Build frontend and start backend production server"
+sequence = [
+    { cmd = "deno task build", cwd = "frontend" },
+    { cmd = "uv run poe serve", cwd = "backend" }
+]
+
+[tool.poe.tasks.dev]
+help = "Run development servers in parallel"
+parallel = [
+    { cmd = "uv run poe dev", cwd = "backend" },
+    { cmd = "deno task dev", cwd = "frontend" }
+]
+ignore_fail = "return_non_zero"
+
+[tool.poe.tasks.check-all]
+help = "Run all checks for formatting, linting and tests"
+sequence = [
+    { cmd = "uv run poe check-all", cwd = "backend" },
+    { cmd = "deno task check:all", cwd = "frontend" }
+]
+ignore_fail = "return_non_zero"
+
+[tool.poe.tasks.fresh]
+help = "Total reset: wipe environments and restart everything"
+sequence = [
+    { cmd = "rm -rf .venv" },
+    { cmd = "uv sync" },
+    { parallel = [
+        { cmd = "uv run poe fresh", cwd = "backend" },
+        { cmd = "deno task fresh", cwd = "frontend" }
+    ], ignore_fail = true }
+]

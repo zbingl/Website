@@ -1,0 +1,52 @@
+output:
+  - meta
+  - skips
+  - failure
+  - summary
+
+pre-commit:
+  parallel: true
+  commands:
+    backend-format:
+      root: backend
+      stage_fixed: true
+      run: uv run poe format
+
+    backend-lint-fix:
+      root: backend
+      stage_fixed: true
+      run: uv run poe lint-fix
+
+    backend-check:
+      root: backend
+      run: uv run poe check
+
+    frontend-format:
+      root: frontend
+      stage_fixed: true
+      run: deno fmt
+
+    frontend-lint:
+      root: frontend
+      stage_fixed: true
+      run: deno lint --fix
+
+    frontend-check:
+      root: frontend
+      run: deno check
+
+pre-push:
+  parallel: true
+  commands:
+    backend-test:
+      root: backend
+      run: uv run poe test
+
+    frontend-test:
+      root: frontend
+      run: deno task test run
+
+    frontend-build:
+      root: frontend
+      run: deno task build:no-check
+

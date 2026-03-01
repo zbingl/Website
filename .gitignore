@@ -1,0 +1,13 @@
+# MAC OS specific
+.DS_Store
+
+# VS Code specific
+.vscode/
+
+# JetBrains specific
+.idea/
+*.iml
+
+# Python/uv
+.venv
+
