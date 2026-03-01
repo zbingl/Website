@@ -1,0 +1,64 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = "Tidtagning för enduro – fastapi + sqlite-backend"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.128.0",
+    "httpx>=0.28.1",
+    "pydantic>=2.12.5",
+    "sqlalchemy>=2.0.45",
+    "uvicorn[standard]>=0.40.0",
+]
+
+[dependency-groups]
+dev = [
+    "poethepoet>=0.40.0",
+    "pyright>=1.1.408",
+    "pytest>=9.0.2",
+    "ruff>=0.14.13",
+]
+
+[tool.poe]
+executor.type = "uv"
+env = { UV_IGNORE_PATH_MISMATCH = "1" }
+
+[tool.poe.tasks]
+serve = "uvicorn app.main:app --host 0.0.0.0 --port 8000"
+dev = "uvicorn app.main:app --reload"
+lint = "ruff check ."
+lint-fix = "ruff check --fix ."
+format-check = "ruff format --check ." 
+format = "ruff format ."
+check = "pyright ."
+test = "pytest"
+check-all = [
+    "format-check",
+    "lint",
+    "check",
+    "test"
+]
+fix = [
+    "format",
+    "lint-fix"
+]
+fresh = "rm -rf .venv/ .pytest_cache/ backend.egg-info/ *.db && uv sync"
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "UP", "B", "SIM", "I", "W"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.pyright]
+include = ["."]
+venvPath = "."
+venv = ".venv"
+typeCheckingMode = "strict"
+reportUnknownMemberType = false
+
