@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Plant Soil Moisture Sensor</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="An ESP32 web server that reports the soil moisture of my plants." />
+  <link rel="stylesheet" type="text/css" href="../style.css" />
+  <link rel="icon" href="favicon.png">
+</head>
+
+<body>
+  <button onclick="location.href='../index.html'" class="button1">Go back</button>
+  <h1>Plant Soil Moisture Sensor</h1>
+  <h3>Github: <a href="https://github.com/zbingl/PlantSoilMoistureSensor">github.com/zbingl/PlantSoilMoistureSensor</a>
+  </h3>
+
+  <p>My goal with this project was to create a web server on an ESP32 where I can remotely see the soil moisture of my
+    plants at home.
+    As a bonus, I learned useful skills like CAD and PCB design. I started by learning KiCad and designing a schematic
+    for what I wanted to build.</p>
+
+  <figure>
+    <img src="media/Schematic.png" alt="Schematic">
+    <figcaption>The schematic</figcaption>
+  </figure>
+
+  <p>Afterwards, I decided to solder the components onto a prototype board to check that the schematic was correct.</p>
+
+  <div class="gallery">
+    <figure>
+      <img src="media/prototypeBoard.jpg" alt="Prototype board">
+      <figcaption>Prototype board</figcaption>
+    </figure>
+    <figure>
+      <img src="media/prototypeBoardWithESP.jpg" alt="Prototype board with ESP32">
+      <figcaption>Prototype board with the ESP32</figcaption>
+    </figure>
+  </div>
+
+  <p>Thankfully it worked, so I designed a case for it in KiCad. I 3D-printed the case on the school's printers,
+    but sadly the measurements were inaccurate, and I learned that my skills with a caliper were not as good as I
+    thought.</p>
+
+  <div class="gallery">
+    <figure>
+      <img src="media/V1withCase.jpg" alt="Version 1 with case">
+      <figcaption>Version 1 with case</figcaption>
+    </figure>
+    <figure>
+      <img src="media/V1withCaseBottomOnly.jpg" alt="Version 1 with case, bottom only">
+      <figcaption>Version 1, bottom half of the case only</figcaption>
+    </figure>
+  </div>
+
+  <p>I decided instead to order a PCB from JLCPCB, which would make designing the case easier since the measurements
+    would be known.</p>
+
+  <div class="gallery">
+    <figure>
+      <img src="media/PCB.png" alt="PCB">
+      <figcaption>PCB</figcaption>
+    </figure>
+    <figure>
+      <img src="media/TopView.png" alt="Top view">
+      <figcaption>Top view</figcaption>
+    </figure>
+    <figure>
+      <img src="media/TopSideView1.png" alt="Top side view 1">
+      <figcaption>Top side view 1</figcaption>
+    </figure>
+    <figure>
+      <img src="media/TopSideView2.png" alt="Top side view 2">
+      <figcaption>Top side view 2</figcaption>
+    </figure>
+  </div>
+</body>
+
+</html>
