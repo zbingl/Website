@@ -1,188 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
-/* Base styles */
-body {
-  background-color: #333;
-  color: #fff;
-  margin: 0 auto; /* center content */
-  max-width: 700px; /* optional max width for large screens */
-  padding: 20px; /* some padding on small screens */
-  line-height: 1.6; /* added */
-}
-
-div {
-  text-align: center;
-  border: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  scroll-behavior: smooth;
-}
-
-h1 {
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-
-h2 {
-  color: #b1b9e2;
-  text-align: left;
-}
-
-h3 {
-  color: #8d9be0;
-  text-align: left;
-}
-
-p, ul {
-  text-align: left;
-}
-
-a {
-  color: hotpink;
-  font-weight: bold;
-}
-
-img {
-  height: auto;
-  width: auto;
-  max-width: 100%; /* added: images never overflow the page */
-}
-
-img.small {
-  max-width: 200px;
-}
-
-img.large {
-  max-width: 600px;
-}
-
-/* Added: figures, captions and galleries */
-figure {
-  margin: 0;
-}
-
-figure img {
-  display: block;
-  width: 100%;
-  border-radius: 4px;
-}
-
-figcaption {
-  margin-top: 8px;
-  font-size: 0.85em;
-  color: #bbb;
-  text-align: center;
-}
-
-/* Consecutive figures in a .gallery sit side by side
-   and wrap to a single column on narrow screens. */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 16px;
-  align-items: start;
-}
-
-body > figure,
-.gallery {
-  margin-bottom: 32px;
-}
-
-button {
-  font-weight: bold;
-  border-radius: 2px;
-  border: none;
-  padding: 10px 20px;
-  font-size: 17px;
-  flex: 1 1 150px;
-  box-sizing: border-box;
-}
-
-.button1 {
-  text-align: left;
-  background-color: #8d9be0;
-  color: #292929;
-  font-weight: bold;
-  border-radius: 2px;
-  max-width: 200px;
-}
-
-.button1:hover {
-  background-color: #b1b9e2;
-}
-
-.computerButton {
-  text-align: left;
-  background-color: #333;
-  color: white;
-  max-width: 700px;
-}
-
-.button-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-bottom: 30px;
-}
-
-textarea {
-  resize: none;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-/* Media query for smaller screens */
-@media (max-width: 768px) {
+  /* Base styles */
   body {
-    padding: 10px;
-    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+    margin: 0 auto;
+    /* center content */
+    max-width: 700px;
+    /* optional max width for large screens */
+    padding: 20px;
+    /* some padding on small screens */
+    line-height: 1.6;
+    /* added */
+  }
+
+  div {
+    text-align: center;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    scroll-behavior: smooth;
   }
 
   h1 {
-    font-size: 2em;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  h2 {
+    color: #b1b9e2;
+    text-align: left;
   }
 
   h3 {
-    font-size: 1.2em;
+    color: #8d9be0;
+    text-align: left;
   }
 
-  p, li {
-    font-size: 1em;
+  p,
+  ul {
+    text-align: left;
   }
 
-  .button-container {
-    flex-direction: column; /* stack buttons vertically */
-    gap: 20px;
-  }
-
-  button {
-    width: 100%; /* full width on small screens */
-    max-width: none;
-    margin-bottom: 5px;
-  }
-
-  .button1 {
-    max-width: none;
-  }
-
-  .computerButton {
-    max-width: none;
+  a {
+    color: hotpink;
+    font-weight: bold;
   }
 
   img {
     height: auto;
     width: auto;
+    max-width: 100%;
+    /* added: images never overflow the page */
   }
 
   img.small {
@@ -190,9 +67,141 @@ textarea {
   }
 
   img.large {
-    max-width: 400px;
+    max-width: 600px;
   }
-}
+
+  /* Added: figures, captions and galleries */
+  figure {
+    margin: 0;
+  }
+
+  figure img {
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+  }
+
+  figcaption {
+    margin-top: 8px;
+    font-size: 0.85em;
+    color: #bbb;
+    text-align: center;
+  }
+
+  /* Consecutive figures in a .gallery sit side by side
+   and wrap to a single column on narrow screens. */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    align-items: start;
+  }
+
+  body>figure,
+  .gallery {
+    margin-bottom: 32px;
+  }
+
+  button {
+    font-weight: bold;
+    border-radius: 2px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 17px;
+    flex: 1 1 150px;
+    box-sizing: border-box;
+  }
+
+  .button1 {
+    text-align: left;
+    background-color: #8d9be0;
+    color: #292929;
+    font-weight: bold;
+    border-radius: 2px;
+    max-width: 200px;
+  }
+
+  .button1:hover {
+    background-color: #b1b9e2;
+  }
+
+  .computerButton {
+    text-align: left;
+    background-color: #333;
+    color: white;
+    max-width: 700px;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  textarea {
+    resize: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  /* Media query for smaller screens */
+  @media (max-width: 768px) {
+    body {
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    h3 {
+      font-size: 1.2em;
+    }
+
+    p,
+    li {
+      font-size: 1em;
+    }
+
+    .button-container {
+      flex-direction: column;
+      /* stack buttons vertically */
+      gap: 20px;
+    }
+
+    button {
+      width: 100%;
+      /* full width on small screens */
+      max-width: none;
+      margin-bottom: 5px;
+    }
+
+    .button1 {
+      max-width: none;
+    }
+
+    .computerButton {
+      max-width: none;
+    }
+
+    img {
+      height: auto;
+      width: auto;
+    }
+
+    img.small {
+      max-width: 200px;
+    }
+
+    img.large {
+      max-width: 400px;
+    }
+  }
 </style>
 
 <head>
@@ -209,9 +218,9 @@ textarea {
   <h3>Github: <a href="https://github.com/zbingl/PlantSoilMoistureSensor">github.com/zbingl/PlantSoilMoistureSensor</a>
   </h3>
 
-  <p>My goal with this project was to create a web server on an ESP32 where I can remotely see the soil moisture of my
+  <p>My goal with this project was to create a web server on an ESP32 devboard where I can remotely see the soil moisture of my
     plants at home.
-    As a bonus, I learned useful skills like CAD and PCB design. I started by learning KiCad and designing a schematic
+    As a bonus, I learned useful skills like CAD and PCB design. I started by learning <a href="https://www.kicad.org/">KiCad</a> and designing a schematic
     for what I wanted to build.</p>
 
   <figure>
@@ -232,7 +241,7 @@ textarea {
     </figure>
   </div>
 
-  <p>Thankfully it worked, so I designed a case for it in KiCad. I 3D-printed the case on the school's printers,
+  <p>Thankfully it worked, so I designed a case for it in <a href="https://www.freecad.org/">FreeCAD</a>. I 3D-printed the case on the school's printers,
     but sadly the measurements were inaccurate, and I learned that my skills with a caliper were not as good as I
     thought.</p>
 
@@ -247,7 +256,7 @@ textarea {
     </figure>
   </div>
 
-  <p>I decided instead to order a PCB from JLCPCB, which would make designing the case easier since the measurements
+  <p>I decided instead to order a PCB from <a href="https://jlcpcb.com/">JLCPCB</a>, which would make designing the case easier since the measurements
     would be known.</p>
 
   <div class="gallery">
@@ -268,6 +277,39 @@ textarea {
       <figcaption>Top side view 2</figcaption>
     </figure>
   </div>
+
+  <p>When the PCB arrived i soldered all components to it and assembled the whole thing.</p>
+
+  <div class="gallery">
+    <figure>
+      <img src="media/Board.jpg" alt="PCB">
+      <figcaption>Assembled PCB</figcaption>
+    </figure>
+  </div>
+
+  <div class="gallery">
+    <figure>
+      <img src="media/Done1.jpg" alt="PCB">
+      <figcaption>Final product</figcaption>
+    </figure>
+    <figure>
+      <img src="media/Done3.jpg" alt="PCB">
+      <figcaption>Testing on my plants</figcaption>
+    </figure>
+  </div>
+
+  <p>The device serves a simple interface on port 80.</p>
+  
+
+  <div class="gallery">
+    <figure>
+      <img src="media/Interface.png" alt="PCB">
+      <figcaption>Interface</figcaption>
+    </figure>
+  </div>
+
 </body>
+
+
 
 </html>
